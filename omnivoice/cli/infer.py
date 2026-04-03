@@ -46,7 +46,7 @@ def get_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--model",
         type=str,
-        default="k2-fsa/OmniVoice",
+        default="models/OmniVoice",
         help="Model checkpoint path or HuggingFace repo id.",
     )
     parser.add_argument(

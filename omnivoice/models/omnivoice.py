@@ -230,7 +230,7 @@ class OmniVoice(PreTrainedModel):
     def from_pretrained(cls, pretrained_model_name_or_path, *args, **kwargs):
         train_mode = kwargs.pop("train", False)
         load_asr = kwargs.pop("load_asr", False)
-        asr_model_name = kwargs.pop("asr_model_name", "openai/whisper-large-v3-turbo")
+        asr_model_name = kwargs.pop("asr_model_name", "models/whisper-large-v3-turbo")
 
         # Suppress noisy INFO logs from transformers/huggingface_hub during loading
         _prev_disable = logging.root.manager.disable
@@ -287,7 +287,7 @@ class OmniVoice(PreTrainedModel):
     # ASR support (optional, for auto-transcription)
     # -------------------------------------------------------------------
 
-    def load_asr_model(self, model_name: str = "openai/whisper-large-v3-turbo"):
+    def load_asr_model(self, model_name: str = "models/whisper-large-v3-turbo"):
         """Load a Whisper ASR model for reference audio transcription.
 
         Args:

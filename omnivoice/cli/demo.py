@@ -118,7 +118,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--model",
-        default="k2-fsa/OmniVoice",
+        default="models/OmniVoice",
         help="Model checkpoint path or HuggingFace repo id.",
     )
     parser.add_argument(
@@ -525,6 +525,7 @@ def main(argv=None) -> int:
         server_port=args.port,
         share=args.share,
         root_path=args.root_path,
+        inbrowser=True,
     )
     return 0
 
